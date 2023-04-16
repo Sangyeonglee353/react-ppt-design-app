@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Main from "./components/Main";
+import DesignList from "./components/DesignList";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-function App() {
+const AppCSS = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppCSS>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/designlist" element={<DesignList />} />
+        </Routes>
+      </BrowserRouter>
+    </AppCSS>
   );
-}
+};
 
 export default App;
