@@ -3,6 +3,10 @@ import Main from "./components/Main";
 import DesignList from "./components/DesignList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+// pdf.js 활성화
+import { pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 const AppCSS = styled.div`
   width: 100vw;
   height: 100vh;

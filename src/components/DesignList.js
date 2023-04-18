@@ -1,37 +1,72 @@
 import styled from "styled-components";
 import Header from "./Header";
 import DesignItem from "./DesignItem";
+import bgSimple from "../images/simple_bg.png";
+import { useState } from "react";
+import DesignDetail from "./DesignDetail";
 
 const DesignListCSS = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 90%;
-  height: 100vh;
-  margin: 2vh auto;
+  width: 100%;
+  height: 88vh;
+  margin: auto;
   list-style: none;
+  overflow-y: scroll;
+
+  background-image: url(${bgSimple});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 const DesignList = () => {
-  const items = [
-    { id: 1, name: "Item 1" },
-    { id: 2, name: "Item 2" },
-    { id: 3, name: "Item 3" },
-    { id: 4, name: "Item 4" },
-    { id: 5, name: "Item 5" },
-    { id: 6, name: "Item 6" },
-    { id: 7, name: "Item 7" },
-    { id: 8, name: "Item 8" },
-    { id: 9, name: "Item 9" },
+  const [designDetailShow, setDesignDetailShow] = useState(false);
+  const [designData, setDesignData] = useState("");
+  const pdfUrls = [
+    "/pdfs/CED_210327.pdf",
+    "/pdfs/CED_210502.pdf",
+    "/pdfs/CED_210509.pdf",
+    "/pdfs/CED_210606.pdf",
+    // "/pdfs/NCS_220529.pdf",
+    "/pdfs/webProgramming_220615.pdf",
+    "/pdfs/job_221025.pdf",
+    "/pdfs/mobileProgramming_221211.pdf",
+    "/pdfs/computerSecurity_221216.pdf",
+    "/pdfs/safeProject_230131.pdf",
+    "/pdfs/contagion_230410.pdf",
+    "/pdfs/hangeul_230414.pdf",
+    "/pdfs/word_230414.pdf",
+    "/pdfs/ppt_230414.pdf",
+    "/pdfs/sns_230414.pdf",
   ];
-  console.log("test");
+
+  const showDesignDetailHandler = () => {
+    setDesignDetailShow(true);
+  };
+
+  const hideDesignDetailHandler = () => {
+    setDesignDetailShow(false);
+  };
+
   return (
     <>
       <Header />
+      {designDetailShow && (
+        <DesignDetail
+          designData={designData}
+          onHideDesignDetail={hideDesignDetailHandler}
+        />
+      )}
       <DesignListCSS>
-        {items.map((item) => (
-          <DesignItem data={item} />
+        {pdfUrls.map((pdfUrl, index) => (
+          <DesignItem
+            key={index}
+            pdfUrl={pdfUrl}
+            onShowDesignDetail={showDesignDetailHandler}
+            onSetDesignData={setDesignData}
+          />
         ))}
       </DesignListCSS>
     </>
