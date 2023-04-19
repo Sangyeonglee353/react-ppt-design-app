@@ -3,6 +3,7 @@ import { Document, Page } from "react-pdf";
 import styled from "styled-components";
 import "react-pdf/dist/esm/Page/TextLayer.css";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PdfViewerCSS = styled.div`
   canvas {
@@ -15,12 +16,20 @@ const PdfViewerCSS = styled.div`
     left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
+    line-height: 40px;
     text-align: center;
+
     .prev {
       cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
     }
     .next {
       cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
     }
   }
   .annotationLayer {
