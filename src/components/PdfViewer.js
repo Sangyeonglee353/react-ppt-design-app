@@ -18,17 +18,32 @@ const PdfViewerCSS = styled.div`
     font-size: 30px;
     line-height: 40px;
     text-align: center;
-
+  }
+  .pageBtn {
+    color: var(--color-main-grey);
+    opacity: 0.35;
     .prev {
+      position: absolute;
+      top: 50%;
+      left: 1%;
+      transform: translateY(-50%);
+      font-size: 100px;
       cursor: pointer;
       &:hover {
-        font-weight: bold;
+        opacity: 1;
+        color: black;
       }
     }
     .next {
+      position: absolute;
+      top: 50%;
+      right: 1%;
+      transform: translateY(-50%);
+      font-size: 100px;
       cursor: pointer;
       &:hover {
-        font-weight: bold;
+        opacity: 1;
+        color: black;
       }
     }
   }
@@ -52,27 +67,33 @@ const PdfViewer = (props) => {
         <Page pageNumber={pageNumber} />
       </Document>
       {props.onPageController && (
-        <p className="pageNavi">
-          <span
-            className="prev"
-            onClick={() =>
-              pageNumber > 1 ? setPageNumber(pageNumber - 1) : null
-            }
-          >
-            &lt;&nbsp;&nbsp;
-          </span>
-          <span>
-            Page {pageNumber} of {numPages}
-          </span>
-          <span
-            className="next"
-            onClick={() =>
-              pageNumber < numPages ? setPageNumber(pageNumber + 1) : null
-            }
-          >
-            &nbsp;&nbsp;&gt;
-          </span>
-        </p>
+        <>
+          <div className="pageBtn">
+            <span
+              className="prev"
+              onClick={() =>
+                pageNumber > 1 ? setPageNumber(pageNumber - 1) : null
+              }
+            >
+              {/* &lt;&nbsp;&nbsp; */}
+              <FontAwesomeIcon icon="fa-solid fa-angle-left" />
+            </span>
+            <span
+              className="next"
+              onClick={() =>
+                pageNumber < numPages ? setPageNumber(pageNumber + 1) : null
+              }
+            >
+              {/* &nbsp;&nbsp;&gt; */}
+              <FontAwesomeIcon icon="fa-solid fa-angle-right" />
+            </span>
+          </div>
+          <p className="pageNavi">
+            <span>
+              Slides {pageNumber} of {numPages}
+            </span>
+          </p>
+        </>
       )}
     </PdfViewerCSS>
   );
