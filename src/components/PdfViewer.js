@@ -11,11 +11,19 @@ const PdfViewerCSS = styled.div`
     height: 33% !important;
     border-radius: 20px;
   }
+  .makeDate {
+    position: absolute;
+    top: -1.5%;
+    left: 3%;
+    background-color: #555;
+    border: 10px solid #555;
+    color: white;
+  }
   .pageNavi {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 30px;
+    font-size: 20px;
     line-height: 40px;
     text-align: center;
   }
@@ -61,13 +69,14 @@ const PdfViewer = (props) => {
   return (
     <PdfViewerCSS>
       <Document
-        file={process.env.PUBLIC_URL + props.pdfUrl}
+        file={process.env.PUBLIC_URL + props.pdfUrl.url}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page pageNumber={pageNumber} />
       </Document>
       {props.onPageController && (
         <>
+          <div className="makeDate">{props.pdfUrl.date}</div>
           <div className="pageBtn">
             <span
               className="prev"
