@@ -7,6 +7,9 @@ const DesignItemCSS = styled.li`
   background-color: var(--color-main-grey);
   border-radius: 20px;
   margin: 1vw;
+  box-shadow: 11px 10px 19px -3px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 11px 10px 19px -3px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 11px 10px 19px -3px rgba(0, 0, 0, 0.6);
   &:hover {
     background-color: #b9b9b9;
   }
