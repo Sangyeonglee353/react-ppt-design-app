@@ -11,7 +11,7 @@ const DesignListCSS = styled.ul`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 88vh;
+  height: 89vh;
   margin: auto;
   list-style: none;
   overflow-y: scroll;
