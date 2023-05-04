@@ -25,6 +25,7 @@ const DesignList = () => {
   const [designDetailShow, setDesignDetailShow] = useState(false);
   const [designData, setDesignData] = useState("");
   const pdfUrls = [
+    { url: "/pdfs/180531_koica_computer_project.pdf", date: "2018.05.31" },
     { url: "/pdfs/190831_koica_final_pt.pdf", date: "2019.08.31" },
     { url: "/pdfs/191204_koica_phlippine_life_info.pdf", date: "2019.12.04" },
     { url: "/pdfs/200205_koica_part_info.pdf", date: "2020.02.05" },
