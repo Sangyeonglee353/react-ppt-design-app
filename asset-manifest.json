@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-ppt-design-app/static/css/main.8edf6a5d.css",
+    "main.js": "/react-ppt-design-app/static/js/main.da55b06f.js",
+    "static/js/787.d713ba9d.chunk.js": "/react-ppt-design-app/static/js/787.d713ba9d.chunk.js",
+    "static/media/mandelion.jpg": "/react-ppt-design-app/static/media/mandelion.cd7d9fd97f3a0b3a3d57.jpg",
+    "static/media/simple_bg.png": "/react-ppt-design-app/static/media/simple_bg.5ad800028c4b5cfd1fdd.png",
+    "index.html": "/react-ppt-design-app/index.html",
+    "main.8edf6a5d.css.map": "/react-ppt-design-app/static/css/main.8edf6a5d.css.map",
+    "main.da55b06f.js.map": "/react-ppt-design-app/static/js/main.da55b06f.js.map",
+    "787.d713ba9d.chunk.js.map": "/react-ppt-design-app/static/js/787.d713ba9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8edf6a5d.css",
+    "static/js/main.da55b06f.js"
+  ]
+}
